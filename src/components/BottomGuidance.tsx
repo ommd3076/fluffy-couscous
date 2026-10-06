@@ -6,9 +6,9 @@ interface BottomGuidanceProps {
   faces: TrackedFace[];
   portal: PortalState | null;
   handCount: number;
-  isStreaming: boolean;
-  isHandTrackingReleased: boolean;
-  onToggleHandTracking: () => void;
+  isStreaming?: boolean;
+  isHandTrackingReleased?: boolean;
+  onToggleHandTracking?: () => void;
   onResetRoles: () => void;
 }
 
@@ -16,8 +16,8 @@ export const BottomGuidance: React.FC<BottomGuidanceProps> = ({
   faces,
   portal,
   handCount,
-  isStreaming,
-  isHandTrackingReleased,
+  isStreaming = true,
+  isHandTrackingReleased = false,
   onToggleHandTracking,
   onResetRoles,
 }) => {

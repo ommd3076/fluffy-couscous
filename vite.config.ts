@@ -13,4 +13,7 @@ export default defineConfig({
     target: 'esnext',
     chunkSizeWarningLimit: 1200,
   },
+  test: {
+    exclude: ['**/node_modules/**', '**/dist/**', 'e2e/**'],
+  },
 });

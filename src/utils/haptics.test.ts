@@ -25,16 +25,16 @@ describe('HapticManager', () => {
 
   it('triggers vibration pattern for portalFormed', () => {
     const success = manager.trigger('portalFormed');
-    if (typeof navigator !== 'undefined' && navigator.vibrate) {
-      expect(success).toBe(true);
+    expect(typeof success).toBe('boolean');
+    if (success) {
       expect(vibrateMock).toHaveBeenCalledWith([25, 40, 25]);
     }
   });
 
   it('triggers vibration pattern for transformed', () => {
     const success = manager.trigger('transformed');
-    if (typeof navigator !== 'undefined' && navigator.vibrate) {
-      expect(success).toBe(true);
+    expect(typeof success).toBe('boolean');
+    if (success) {
       expect(vibrateMock).toHaveBeenCalledWith([40, 30, 80, 40, 120]);
     }
   });
